@@ -33,7 +33,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.maphieunhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngaynhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_sua = new System.Windows.Forms.Button();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,7 +65,7 @@
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(61, 34);
+            this.name.Location = new System.Drawing.Point(49, 20);
             this.name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(99, 16);
@@ -75,7 +74,7 @@
             // 
             // dtngaynhap
             // 
-            this.dtngaynhap.Location = new System.Drawing.Point(431, 29);
+            this.dtngaynhap.Location = new System.Drawing.Point(429, 15);
             this.dtngaynhap.Margin = new System.Windows.Forms.Padding(4);
             this.dtngaynhap.Name = "dtngaynhap";
             this.dtngaynhap.Size = new System.Drawing.Size(265, 22);
@@ -84,17 +83,20 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maphieunhap,
             this.ngaynhap});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 142);
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.dataGridView1.Location = new System.Drawing.Point(14, 130);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(680, 185);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // maphieunhap
             // 
@@ -110,19 +112,9 @@
             this.ngaynhap.MinimumWidth = 6;
             this.ngaynhap.Name = "ngaynhap";
             // 
-            // btn_sua
-            // 
-            this.btn_sua.Location = new System.Drawing.Point(366, 357);
-            this.btn_sua.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(109, 47);
-            this.btn_sua.TabIndex = 9;
-            this.btn_sua.Text = "Sửa";
-            this.btn_sua.UseVisualStyleBackColor = true;
-            // 
             // btn_xoa
             // 
-            this.btn_xoa.Location = new System.Drawing.Point(539, 358);
+            this.btn_xoa.Location = new System.Drawing.Point(511, 358);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(4);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(108, 47);
@@ -133,7 +125,7 @@
             // 
             // btn_them
             // 
-            this.btn_them.Location = new System.Drawing.Point(199, 358);
+            this.btn_them.Location = new System.Drawing.Point(275, 358);
             this.btn_them.Margin = new System.Windows.Forms.Padding(4);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(109, 47);
@@ -145,7 +137,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(331, 34);
+            this.label1.Location = new System.Drawing.Point(334, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 16);
@@ -227,12 +219,14 @@
             // dataGridView2
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maphieunhaplk,
             this.malinhkien,
             this.tenlinhkien,
             this.soluong});
+            this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
             this.dataGridView2.Location = new System.Drawing.Point(33, 130);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
@@ -304,10 +298,15 @@
             // 
             // pb_pn
             // 
+            this.pb_pn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.pb_pn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pb_pn.Controls.Add(this.btn_tim);
+            this.pb_pn.Controls.Add(this.dataGridView1);
+            this.pb_pn.Controls.Add(this.dtngaynhap);
             this.pb_pn.Controls.Add(this.btn_them);
+            this.pb_pn.Controls.Add(this.label1);
             this.pb_pn.Controls.Add(this.btn_xoa);
-            this.pb_pn.Controls.Add(this.btn_sua);
+            this.pb_pn.Controls.Add(this.name);
             this.pb_pn.Location = new System.Drawing.Point(12, 13);
             this.pb_pn.Name = "pb_pn";
             this.pb_pn.Size = new System.Drawing.Size(722, 569);
@@ -315,7 +314,7 @@
             // 
             // btn_tim
             // 
-            this.btn_tim.Location = new System.Drawing.Point(39, 358);
+            this.btn_tim.Location = new System.Drawing.Point(73, 358);
             this.btn_tim.Margin = new System.Windows.Forms.Padding(4);
             this.btn_tim.Name = "btn_tim";
             this.btn_tim.Size = new System.Drawing.Size(109, 47);
@@ -326,6 +325,8 @@
             // 
             // pn_lk
             // 
+            this.pn_lk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.pn_lk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pn_lk.Controls.Add(this.btn_XoaLK);
             this.pn_lk.Controls.Add(this.btn_themLK);
             this.pn_lk.Controls.Add(this.btn_SuaLK);
@@ -346,13 +347,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1464, 655);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(218)))), ((int)(((byte)(220)))));
+            this.ClientSize = new System.Drawing.Size(1481, 655);
             this.Controls.Add(this.txt_maphieunhap);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txt_maphieu);
-            this.Controls.Add(this.dtngaynhap);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.name);
             this.Controls.Add(this.pb_pn);
             this.Controls.Add(this.pn_lk);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -361,6 +359,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.pb_pn.ResumeLayout(false);
+            this.pb_pn.PerformLayout();
             this.pn_lk.ResumeLayout(false);
             this.pn_lk.PerformLayout();
             this.ResumeLayout(false);
@@ -373,7 +372,6 @@
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.DateTimePicker dtngaynhap;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Button btn_them;
         private System.Windows.Forms.Label label1;

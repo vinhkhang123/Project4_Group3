@@ -184,5 +184,10 @@ namespace Project4_GR3
             ClearTextBoxes();
             dataGridView2.DataSource = lkb.Readitem(lkdto);
         }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+        
+        }
     }
 }
