@@ -36,8 +36,18 @@ namespace DAL
             string query = "INSERT INTO " + _tablelk + "(" + _filesdl + ")VALUES ('{0}',N'{1}','{2}')";
             string Query = string.Format(query, (Item.Maphieunhap).ToString().Replace("\'", "\\\'"),(Item.Tenlinhkien).ToString().Replace("\'", "\\\'"), (Item.Soluong).ToString().Replace("\'", "\\\'"));
             return (objDBAccess.ExecuteNonQuery(Query) > 0) ? true : false;
-
-
+        }
+        public bool Update(LinhKienDTO Item)
+        {
+            string query = "UPDATE  " + _tablelk + " SET tenlinhkien= '{1}',soluong= '{2}' WHERE malinhkien = '{0}'";
+            string Query = string.Format(query, (Item.Malinhkien).ToString().Replace("\'", "\\\'"), (Item.Tenlinhkien).ToString().Replace("\'", "\\\'"), (Item.Soluong).ToString().Replace("\'", "\\\'"));
+            return (objDBAccess.ExecuteNonQuery(Query) > 0) ? true : false;
+        }
+        public bool Delete(LinhKienDTO Item)
+        {
+            string query = "DELETE FROM  " + _tablelk + " WHERE malinhkien = '{0}'";
+            string Query = string.Format(query, Item.Malinhkien);
+            return (objDBAccess.ExecuteNonQuery(Query) > 0) ? true : false;
         }
     }
 }

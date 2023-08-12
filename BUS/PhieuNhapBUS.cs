@@ -11,18 +11,18 @@ namespace BUS
 {
     public class PhieuNhapBUS
     {
-        phieunhap HO = new phieunhap();
+        phieunhap PN = new phieunhap();
         public DataTable ReadAll()
         {
-            return HO.ReadAll();
+            return PN.ReadAll();
         }
         public bool Create(PhieuNhapDTO dto)
         {
-            return HO.Create(dto);
+            return PN.Create(dto);
         }
         public bool Delete(PhieuNhapDTO dto)
         {
-            return HO.Delete(dto);
+            return PN.Delete(dto);
         }
     }
 }

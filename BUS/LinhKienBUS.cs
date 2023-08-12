@@ -11,19 +11,27 @@ namespace BUS
 {
     public class LinhKienBUS
     {
-        linhkien HO = new linhkien();
+        linhkien LK = new linhkien();
         LinhKienDTO dto = new LinhKienDTO();
         public DataTable ReadAll()
         {
-            return HO.ReadAll();
+            return LK.ReadAll();
         }
         public DataTable Readitem(LinhKienDTO dto)
         {
-            return HO.Readitem(dto);
+            return LK.Readitem(dto);
         }
         public bool Create(LinhKienDTO dto)
         {
-            return HO.Create(dto);
+            return LK.Create(dto);
+        }
+        public bool Update(LinhKienDTO dto)
+        {
+            return LK.Update(dto);
+        }
+        public bool Delete(LinhKienDTO dto)
+        {
+            return LK.Delete(dto);
         }
     }
 }

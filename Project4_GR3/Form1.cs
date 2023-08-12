@@ -71,6 +71,7 @@ namespace Project4_GR3
             pndto.Ngaynhap = date;
             ClearTextBoxes();
             pnb.Create(pndto);
+            dataGridView1.DataSource = pnb.ReadAll();
             foreach (Control control in pn_lk.Controls)
             {
 
@@ -149,6 +150,39 @@ namespace Project4_GR3
                 dataGridView2.DataSource = lkb.Readitem(lkdto);
             }
             
+        }
+
+        private void btn_SuaLK_Click(object sender, EventArgs e)
+        {
+           
+            if(txt_tenlinhkien.TextLength==0)
+            {
+                MessageBox.Show("Vui lòng nhập tên linh kiện ");
+                txt_tenlinhkien.Focus();
+            }
+                else if(txt_soluong.TextLength==0)
+                    {
+                        MessageBox.Show("Vui lòng nhập số lượng ");
+                        txt_soluong.Focus();
+                    }
+            else
+            {
+                lkdto.Malinhkien = Convert.ToInt32(txt_malinhkien.Text);
+                lkdto.Tenlinhkien = txt_tenlinhkien.Text;
+                lkdto.Soluong = Convert.ToInt32(txt_soluong.Text);
+                lkb.Update(lkdto);
+                MessageBox.Show("Sửa Thành Công ");
+                dataGridView2.DataSource = lkb.Readitem(lkdto);
+            }
+        }
+
+        private void btn_XoaLK_Click(object sender, EventArgs e)
+        {
+            lkdto.Malinhkien = Convert.ToInt32(txt_malinhkien.Text);
+            lkb.Delete(lkdto);
+            MessageBox.Show("Đã xóa thành công");
+            ClearTextBoxes();
+            dataGridView2.DataSource = lkb.Readitem(lkdto);
         }
     }
 }

@@ -278,6 +278,7 @@
             this.btn_SuaLK.TabIndex = 22;
             this.btn_SuaLK.Text = "Sửa";
             this.btn_SuaLK.UseVisualStyleBackColor = true;
+            this.btn_SuaLK.Click += new System.EventHandler(this.btn_SuaLK_Click);
             // 
             // btn_XoaLK
             // 
@@ -288,6 +289,7 @@
             this.btn_XoaLK.TabIndex = 23;
             this.btn_XoaLK.Text = "Xóa";
             this.btn_XoaLK.UseVisualStyleBackColor = true;
+            this.btn_XoaLK.Click += new System.EventHandler(this.btn_XoaLK_Click);
             // 
             // btn_themLK
             // 
